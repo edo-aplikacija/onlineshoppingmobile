@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+  <head ng-controller="metaTagsCtrl">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="description" content="{{ description }}">  
+    <meta name="keyword" content="{{ title }}">
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="1 days" />
+    <link rel="publisher" href="https://plus.google.com/101337414971261761576" />
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:url" content="{{ metaUrl }}">
+    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:site_name" content="Online Shopping Hub">
+    <meta property="fb:app_id" content="338519009686045">
+    <title ng-bind="title">Online Shopping Hub</title>
+    <meta name="thumbnail" content="{{ image }}" />
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/ionicons/css/ionicons.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" >
+
+  </head>
+  <body ng-cloak class="ng-cloak">
+      <ion-side-menus ng-controller="headerCtrl" enable-menu-with-back-views="true">
+      <!-- Center content -->
+      <ion-side-menu-content>          
+        <ion-header-bar class="bar-stable header-app">
+        <div class="buttons">
+          <button class="button icon button-clear ion-navicon-round header-left-menu-button" ng-click="showHeaderMenuLeft" menu-toggle="left"></button>        
+        </div>
+        <div class="header-title" ng-bind="mainTitle">           
+        </div>         
+        <div class="buttons">
+          
+          <button ng-show="showSearchMenu" class="button icon button-clear ion-search header-right-menu-button" ng-click="showHeaderMenuLeft" menu-toggle="right"></button>
+          <button class="button-clear header-back-button" ng-show="showBackButton" ng-click="goBack()">
+            <i class="icon ion-chevron-left"></i> Back
+          </button>
+        </div>
+        </ion-header-bar>
+        <!-- angular content -->       
+          <ion-nav-view class="angular-content"></ion-nav-view>        
+      </ion-side-menu-content>
+      <!-- Left menu -->
+      <ion-side-menu side="left" class="header-left-menu" is-enabled="true">
+        <ion-content>
+          
+        <div class="list header-left-menu-list">
+           <a menu-close ui-sref="home" class="item item-divider header-left-menu-list-item-divider">
+            Home <i class="icon ion-chevron-right header-left-menu-list-icon"></i>
+          </a>
+          <a menu-close ui-sref="electronics" class="item item-divider header-left-menu-list-item-divider">
+            Electronics <i class="icon ion-chevron-right header-left-menu-list-icon"></i>
+          </a>
+          <a menu-close ui-sref="electronicsCategory({ category:'cell-phones'})" class="item header-left-menu-list-item">Cell Phones <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="electronicsCategory({ category:'cell-phones-accessories'})" class="item header-left-menu-list-item">Cell Phones Accessories <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="electronicsCategory({ category:'tv-video'})" class="item header-left-menu-list-item">TV &amp Video <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="electronicsCategory({ category:'photo-camera'})" class="item header-left-menu-list-item">Photo &amp Camera <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="electronicsCategory({ category:'home-audio'})" class="item header-left-menu-list-item">Home Audio <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="electronicsCategory({ category:'gps'})" class="item header-left-menu-list-item">GPS <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+
+          <a menu-close ui-sref="computersLaptops" class="item item-divider header-left-menu-list-item-divider">Computers &amp Laptops <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'deskops'})" class="item header-left-menu-list-item">Desktops <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'laptops'})" class="item header-left-menu-list-item">Laptops <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'tablets'})" class="item header-left-menu-list-item">Tablets <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'monitors'})" class="item header-left-menu-list-item">Monitors <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'printers'})" class="item header-left-menu-list-item">Printers <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'scanners'})" class="item header-left-menu-list-item">Scanners <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'routers'})" class="item header-left-menu-list-item">Routers <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'webcams'})" class="item header-left-menu-list-item">Webcams <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'external-hard-drives'})" class="item header-left-menu-list-item">External Hard Drives <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="computersLaptopsCategory({ category:'usb-flash-drives'})" class="item header-left-menu-list-item">USB Flash Drives <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+
+          <a menu-close ui-sref="watches" class="item item-divider header-left-menu-list-item-divider">Watches <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="watchesCategory({ category:'mens-watches'})" class="item header-left-menu-list-item">Men's Watches <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="watchesCategory({ category:'womens-watches'})" class="item header-left-menu-list-item">Women's Watches <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+
+          <a menu-close ui-sref="sportsNutrition" class="item item-divider header-left-menu-list-item-divider">Sports Nutrition <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="sportsNutritionCategory({ category:'amino-acids'})" class="item header-left-menu-list-item">Amino Acids <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="sportsNutritionCategory({ category:'endurance-energy'})" class="item header-left-menu-list-item">Endurance &amp Energy <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="sportsNutritionCategory({ category:'fat-burners-thermogenics'})" class="item header-left-menu-list-item">Fat Burners &amp Thermogenics <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="sportsNutritionCategory({ category:'protein'})" class="item header-left-menu-list-item">Proteins <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="sportsNutritionCategory({ category:'pre-workout'})" class="item header-left-menu-list-item">Pre-Workout <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="sportsNutritionCategory({ category:'nutrition-bars'})" class="item header-left-menu-list-item">Nutrition Bars <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="sportsNutritionCategory({ category:'weight-gainers'})" class="item header-left-menu-list-item">Weight Gainers <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="sportsNutritionCategory({ category:'post-workout-recovery'})" class="item header-left-menu-list-item">Post-Workout &amp Recovery <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+
+          <a menu-close ui-sref="petSupplies" class="item item-divider header-left-menu-list-item-divider">Pet Supplies <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="petSuppliesCategory({ category:'birds'})" class="item header-left-menu-list-item">Birds <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="petSuppliesCategory({ category:'cats'})" class="item header-left-menu-list-item">Cats <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="petSuppliesCategory({ category:'dogs'})" class="item header-left-menu-list-item">Dogs <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+          <a menu-close ui-sref="petSuppliesCategory({ category:'fish-aquatic-pets'})" class="item header-left-menu-list-item">Fish &amp Aquatic Pets <i class="icon ion-chevron-right header-left-menu-list-icon"></i></a>
+
+        </div>
+        </ion-content>
+      </ion-side-menu>
+      <ion-side-menu side="right" is-enabled="showSearchMenu">
+        <ion-content class="header-search-menu">
+          <div>
+            <div class="list list-inset header-search-menu-list-search">
+              <label class="item item-input header-search-menu-label-search">
+                <i class="icon ion-search placeholder-icon header-search-menu-icon-search"></i>
+                <input class="header-search-menu-input-search" ng-model="searchData.searchText" type="search" placeholder="Search" >
+              </label>
+            </div>
+            <ion-list>
+                <div>
+                  <ion-item class="item-stable header-search-menu-item-stable" ng-click="toggleGroup('Order by')" ng-class="{active: isGroupShown('Order by')}"> Order by &nbsp; 
+                      <i class="icon header-search-menu-item-stable-icon" ng-class="isGroupShown('Order by') ? 'ion-arrow-up-b' : 'ion-arrow-down-b'"></i> 
+                  </ion-item>
+                  <ion-item class="item-accordion header-search-menu-item-accordion" ng-show="isGroupShown('Order by')">
+                    <div>
+                      <ion-radio ng-model="searchData.orderby" ng-change="updateOrderby(searchData.orderby)" ng-value="'salesrank'">Popular and salesrank</ion-radio>
+                      <ion-radio ng-model="searchData.orderby" ng-change="updateOrderby(searchData.orderby)" ng-value="'price'">Price: low to high</ion-radio>
+                      <ion-radio ng-model="searchData.orderby" ng-change="updateOrderby(searchData.orderby)" ng-value="'-price'">Price: high to low</ion-radio>
+                    </div>
+                  </ion-item>
+                </div>
+                <div ng-show="searchData.allowedSubcategories.length > 0">
+                  <ion-item class="item-stable header-search-menu-item-stable" ng-click="toggleGroup('Subcategory')" ng-class="{active: isGroupShown('Subcategory')}"> Subcategory &nbsp; 
+                      <i class="icon header-search-menu-item-stable-icon" ng-class="isGroupShown('Subcategory') ? 'ion-arrow-up-b' : 'ion-arrow-down-b'"></i> 
+                  </ion-item>
+                  <ion-item class="item-accordion header-search-menu-item-accordion" ng-show="isGroupShown('Subcategory')">
+                    <ion-scroll direction="y" class="header-search-menu-item-accordion-scroll" scrollbar-y="false">
+                      <div ng-repeat="subcategory in searchData.allowedSubcategories | orderBy: 'name'">
+                            <ion-toggle ng-model="subcategory.selected" ng-change="checkedSubcategory(subcategory.searchName)" value="{{subcategory.name}}" toggle-class="toggle-calm">{{ subcategory.name }}</ion-toggle>
+                    </div>
+                    </ion-scroll>
+                    
+                  </ion-item>
+                </div>       
+                <div ng-show="searchData.allowedBrands.length > 0">
+                  <ion-item class="item-stable header-search-menu-item-stable" ng-click="toggleGroup('Brands')" ng-class="{active: isGroupShown('Brands')}"> Brands &nbsp; 
+                      <i class="icon header-search-menu-item-stable-icon" ng-class="isGroupShown('Brands') ? 'ion-arrow-up-b' : 'ion-arrow-down-b'"></i>  
+                  </ion-item>
+                  <ion-item class="item-accordion header-search-menu-item-accordion" ng-show="isGroupShown('Brands')">
+                    <ion-scroll direction="y" class="header-search-menu-item-accordion-scroll" scrollbar-y="false">
+                    
+                      <div ng-repeat="brand in searchData.allowedBrands | orderBy: 'name'">
+                            <ion-toggle ng-model="brand.selected" ng-change="checkedBrand(brand.name)" value="{{brand.name}}" toggle-class="toggle-calm">{{ brand.name }}</ion-toggle>
+                    </div>
+                      </div>
+                    
+                    </ion-scroll>
+                    
+                  </ion-item>
+                  <ion-item class="item-stable header-search-menu-item-stable" ng-click="toggleGroup('Price')" ng-class="{active: isGroupShown('Price')}"> Price &nbsp; 
+                      <i class="icon header-search-menu-item-stable-icon" ng-class="isGroupShown('Price') ? 'ion-arrow-up-b' : 'ion-arrow-down-b'"></i>  
+                  </ion-item>
+                  <ion-item class="item-accordion header-search-menu-item-accordion" ng-show="isGroupShown('Price')">                 
+                    <label class="item item-input header-search-menu-price-label">
+                      <span class="input-label header-search-menu-price-span">From $</span>
+                      <input type="number" min="0" ng-model="searchData.minPrice" class="header-search-menu-price-input">
+                    </label>
+                    <label class="item item-input header-search-menu-price-label">
+                      <span class="input-label header-search-menu-price-span">To $</span>
+                      <input type="number" min="1" ng-model="searchData.maxPrice" class="header-search-menu-price-input">
+                    </label>
+                  </ion-item>
+                </div>
+            </ion-list>
+            <div ng-show="searchError" class="header-search-menu-error" ng-bind="searchError"></div>
+            <div class="button-bar">
+              <button ng-click="searchProducts(searchData.minPrice, searchData.maxPrice)" type="submit" class="button icon ion-search header-search-menu-search-button"></button>
+              <button ng-click="resetProducts()" type="submit" class="button icon ion-close header-search-menu-search-button"></button>
+            </div>
+          </div>
+        </ion-content>
+    </ion-side-menus>
+
+    <div class="bar bar-footer app-footer" ng-controller="socialMediaCtrl">
+      <div class="button-bar">
+          <button class="button button-clear" socialshare socialshare-provider="facebook" socialshare-url="{{ socialUrl }}" socialshare-text="{{ description }}" socialshare-media="{{ socialImage }}">
+            <i class="icon ion-social-facebook"></i>
+          </button>
+          <button class="button button-clear" socialshare socialshare-provider="twitter" socialshare-url="{{ socialUrl }}" socialshare-text="{{ description }}" socialshare-media="{{ socialImage }}" socialshare-hashtags="shopping, online-shopping, interesting">
+            <i class="icon ion-social-twitter"></i>
+          </button>
+          <button class="button button-clear" socialshare socialshare-provider="google+" socialshare-url="{{ socialUrl }}" socialshare-text="{{ description }}" socialshare-media="{{ socialImage }}">
+            <i class="icon ion-social-googleplus"></i>
+          </button>
+          <button class="button button-clear" socialshare socialshare-provider="linkedin" socialshare-url="{{ socialUrl }}" socialshare-text="{{ description }}" socialshare-media="{{ socialImage }}">
+            <i class="icon ion-social-linkedin"></i>
+          </button>
+          <button class="button button-clear" socialshare socialshare-provider="pinterest" socialshare-url="{{ socialUrl }}" socialshare-text="{{ description }}" socialshare-media="{{ socialImage }}">
+            <i class="icon ion-social-pinterest"></i>
+          </button>
+      </div>
+      
+    </div>
+    
+    <!-- ionic/angularjs js -->
+    <script async src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script async src="lib/angular-resource/angular-resource.min.js"></script>
+    <script async src="lib/angularjs-socialshare/dist/angular-socialshare.min.js"></script>
+
+    
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app/app.js"></script>
+    <!--interceptor-->
+    <script src="js/app/interceptors/appInterceptor.js"></script>
+    <!--home-->
+    <script src="js/app/home/controllers/homeCtrl.js"></script>
+    <!--electronics-->
+    <script src="js/app/electronics/services/electronicsService.js"></script>
+    <script src="js/app/electronics/services/electronicsCategoryService.js"></script>
+    <script src="js/app/electronics/services/electronicsSubcategoryService.js"></script>
+    <script src="js/app/electronics/controllers/electronicsCtrl.js"></script>
+    <script src="js/app/electronics/controllers/electronicsCategoryCtrl.js"></script>
+    <script src="js/app/electronics/controllers/electronicsProductCtrl.js"></script>
+    <!--computers laptops-->
+    <script src="js/app/computersLaptops/services/computersLaptopsService.js"></script>
+    <script src="js/app/computersLaptops/services/computersLaptopsCategoryService.js"></script>
+    <script src="js/app/computersLaptops/controllers/computersLaptopsCtrl.js"></script>
+    <script src="js/app/computersLaptops/controllers/computersLaptopsCategoryCtrl.js"></script>
+    <script src="js/app/computersLaptops/controllers/computersLaptopsProductCtrl.js"></script>
+    <!--watches-->
+    <script src="js/app/watches/services/watchesService.js"></script>
+    <script src="js/app/watches/services/watchesCategoryService.js"></script>
+    <script src="js/app/watches/controllers/watchesCtrl.js"></script>
+    <script src="js/app/watches/controllers/watchesCategoryCtrl.js"></script>
+    <script src="js/app/watches/controllers/watchesProductCtrl.js"></script>
+    <!--sports nutrition-->
+    <script src="js/app/sportsNutrition/services/sportsNutritionService.js"></script>
+    <script src="js/app/sportsNutrition/services/sportsNutritionCategoryService.js"></script>
+    <script src="js/app/sportsNutrition/controllers/sportsNutritionCtrl.js"></script>
+    <script src="js/app/sportsNutrition/controllers/sportsNutritionCategoryCtrl.js"></script>
+    <script src="js/app/sportsNutrition/controllers/sportsNutritionProductCtrl.js"></script>
+    <!--pet supplies-->
+    <script src="js/app/petSupplies/services/petSuppliesService.js"></script>
+    <script src="js/app/petSupplies/services/petSuppliesCategoryService.js"></script>
+    <script src="js/app/petSupplies/services/petSuppliesSubcategoryService.js"></script>
+    <script src="js/app/petSupplies/controllers/petSuppliesCtrl.js"></script>
+    <script src="js/app/petSupplies/controllers/petSuppliesCategoryCtrl.js"></script>
+    <script src="js/app/petSupplies/controllers/petSuppliesProductCtrl.js"></script>
+    <!--meta tags-->
+    <script src="js/app/metaTags/controllers/metaTagsCtrl.js"></script>
+    <!--social media-->
+    <script src="js/app/socialMedia/controllers/socialMediaCtrl.js"></script>
+    <!--header-->
+    <script src="js/app/header/controllers/headerCtrl.js"></script>
+  </body>
+</html>

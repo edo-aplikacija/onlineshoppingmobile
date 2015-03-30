@@ -1,0 +1,158 @@
+﻿<ion-view>
+  <ion-content delegate-handle="search-top">
+    <div class="row advanced-search-category-row">
+        <h2 class="advanced-search-category-h2">Browse computer and laptop categories</h2>
+    </div>
+    <ion-scroll zooming="false" direction="x" scrollbar-x="false">
+    <div class="advanced-search-subcategory-main-div">
+            <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'deskops'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         Desktops
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/desktops.jpg" alt="Desktops" />
+                     </div>
+                 </div>
+                 </a>       
+            </div>
+            <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'laptops'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         Laptops
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/laptops.jpg" alt="Laptops" />
+                     </div>
+                 </div>
+                 </a>       
+            </div>
+             <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'tablets'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         Tablets
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/tablets.jpg" alt="Tablets" />
+                     </div>
+                 </div>
+                 </a>       
+            </div>
+            <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'monitors'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         Monitors
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/monitors.jpg" alt="Monitors" />
+                     </div>
+                 </div>
+                 </a>       
+            </div> 
+
+             <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'printers'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         Printers
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/printers.jpg" alt="Printers" />
+                     </div>
+                 </div>
+                 </a>       
+            </div>
+            <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'scanners'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         Scanners
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/scanners.jpg" alt="Scanners" />
+                     </div>
+                 </div>
+                 </a>       
+            </div> 
+             <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'routers'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         Routers
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/routers.jpg" alt="Routers"/>
+                     </div>
+                 </div>
+                 </a>       
+            </div>
+            <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'webcams'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         Webcams
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/webcams.jpg" alt="Webcams"/>
+                     </div>
+                 </div>
+                 </a>       
+            </div> 
+
+ 
+             <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'external-hard-drives'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         External Hard Drives
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/external-hard-drives.jpg" alt="External Hard Drives"/>
+                     </div>
+                 </div>
+                 </a>       
+            </div>
+            <div class="home-subcategory-main-div">
+                 <a ui-sref="computersLaptopsCategory({ category:'usb-flash-drives'})" class="home-subcategory-link">
+                     <div class="card">
+                     <div class="item item-divider home-subcategory-title">
+                         USB Flash Drives
+                     </div>
+                     <div class="item item-text-wrap home-subcategory-img-div">
+                         <img class="home-subcategory-img" src="img/computers/usb.jpg" alt="USB Flash Drives"/>
+                     </div>
+                 </div>
+                 </a>       
+            </div>           
+      </div>
+    </ion-scroll>
+    <div class="advanced-search-num-products" ng-show="totalProducts && totalProducts > 0" ng-bind="'Found ' + totalProducts + ' products'"></div>         
+    <div class="list">
+        <a ui-sref="computersLaptopsProduct({id:product._id, slug:product.slug})" class="item item-thumbnail-left" ng-repeat="product in products">
+          <img class="advanced-search-img" ng-src="{{ product.images[0] }}">
+          <h2 class="advanced-search-title" ng-bind="product.title"></h2>
+          <div class="advanced-search-price"><b ng-bind="formatPrice(product.price)"></b></div>
+          <div>                          
+              <div class="advanced-search-old-price" ng-bind="formatOldPrice(product.price, product.oldprice)"></div>
+              <div ng-show="calculateDiscount(product.price, product.oldprice)" class="advanced-search-sale-tag" ng-bind="calculateDiscount(product.price, product.oldprice)"></div>
+          </div>
+          <div class="advanced-search-amazon-div"><img class="img-responsive advanced-search-amazon-img" src="img/amazon-small-logo.jpg" alt="{{ 'amazon' + $index }}" /></div>
+        </a>
+    </div>
+    <div ng-show="noResult">
+        <div class="advanced-search-no-result">No results. Try again.</div>
+    </div>
+    <div ng-show="loading">
+      <div class="text-center advanced-search-loading-div">
+          <img src="img/ajax-loader.gif" alt="loading" />
+      </div>
+    </div>
+    <div ng-click="loadNewPage()" ng-show="!loading && !noResult && currentPage <= totalProducts / 24" class="advanced-search-next-page">
+        <i class="icon ion-chevron-down advanced-search-next-page-icon"></i>
+    </div>
+  </ion-content>
+</ion-view>

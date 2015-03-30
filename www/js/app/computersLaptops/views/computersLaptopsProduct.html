@@ -1,0 +1,67 @@
+﻿<ion-view>
+  <ion-content>
+    <h1 class="preview-product-title-h1" ng-bind="productData.title"></h1>
+    <div class="row">
+        <ion-scroll zooming="true" direction="x"  scrollbar-x="false">
+            <div class="preview-product-small-img-div">
+                <img ng-repeat="image in productData.images track by $index" ng-click="openModal($index)" class="preview-product-small-img" ng-src="{{ image }}" alt="{{ productData.slug + $index }}" />
+            </div>                                                           
+        </ion-scroll>              
+    </div>
+    <div class="preview-product-price-main-div">
+        <h2 class="preview-product-block-title-h2">Price info</h2>
+        <div class="row" ng-show="formatOldPrice(productData.price, productData.oldprice)">
+            <div class="preview-product-price-title col">Old Price</div>
+            <div class="preview-product-old-price col" ng-bind="formatOldPrice(productData.price, productData.oldprice)"></div>
+        </div>
+        <div class="row">
+            <div class="preview-product-price-title col">Price</div>
+            <div class="preview-product-price col" ng-bind="formatPrice(productData.price)"></div>
+        </div>
+        <div class="row" ng-show="calculateDiscount(productData.price, productData.oldprice)">
+            <div class="preview-product-price-title col">Discount</div>
+            <div class="preview-product-discount col" ng-bind="calculateDiscount(productData.price, productData.oldprice)"></div>
+        </div>
+    </div>
+    <div class="button-bar">
+      <div ng-click="buyButton(productData.producturl)" class="button text-center preview-product-amazon-details-button">Delivery methods</div>
+      <div ng-click="buyButton(productData.producturl)" class="button text-center preview-product-amazon-buy-button">Order now</div>
+    </div>
+    <div>
+        <h2 class="preview-product-block-title-h2">Product info</h2>
+        <div ng-show="productData.brand" class="row">
+            <div class="preview-product-table-title col">Brand</div>
+            <div class="preview-product-table-data col" ng-bind="productData.brand"></div>
+        </div>
+        <div ng-show="productData.category" class="row">
+            <div class="preview-product-table-title col">Category</div>
+            <div class="preview-product-table-data col" ng-bind="productData.category"></div>
+        </div>
+        <div ng-show="productData.subcategory" class="row">
+            <div class="preview-product-table-title col">Subcategory</div>
+            <div class="preview-product-table-data col" ng-bind="productData.subcategory"></div>
+        </div>
+        <div ng-show="productData.model" class="row">
+            <div class="preview-product-table-title col">Model</div>
+            <div class="preview-product-table-data col" ng-bind="productData.model"></div>
+        </div>
+    </div>
+    <div ng-show="productData.features[0]">
+        <h2 class="preview-product-block-title-h2">Features</h2>
+        <div class="row" ng-repeat="feature in productData.features">
+            <div class="preview-product-features col" ng-bind="feature">
+            </div>
+        </div>
+    </div>
+    <div ng-show="productData.editorialreviews[0]">
+        <h2 class="preview-product-block-title-h2">Product description</h2>
+        <div class="row">
+            <div class="preview-product-description col" ng-bind-html="editorialText(productData.editorialreviews[0])">          
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <iframe class="ads-iframe-product" ng-src="{{ adsIframeSrc }}"></iframe>
+    </div>  
+  </ion-content>
+</ion-view>

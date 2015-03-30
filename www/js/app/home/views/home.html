@@ -1,0 +1,447 @@
+﻿<ion-view>
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input ng-model="homeSearchText" type="text" placeholder="Search" ng-keyup="updateHomeSeachText(homeSearchText)">
+      </label>
+    </div>
+    <div class="home-search-result-main-div">
+        <a ng-show="electronicsSearchResult" rel="nofollow" ui-sref="electronics({ title:newHomeSeachText})" class="home-search-result-a">
+            <div class="home-search-result-div">Found <b ng-bind="electronicsSearchResult"></b> products in Electronics.</div>           
+        </a>
+
+        <a ng-show="computersLaptopsSearchResult" rel="nofollow" ui-sref="computersLaptops({ title:newHomeSeachText})" class="home-search-result-a">
+            <div class="home-search-result-div">Found <b ng-bind="computersLaptopsSearchResult"></b> products in Computers &amp Laptops. <i class="icon ion-chevron-right home-search-result-icon"></i></div> 
+        </a>
+
+        <a ng-show="watchesSearchResult" rel="nofollow" ui-sref="watches({ title:newHomeSeachText})" class="home-search-result-a">
+            <div class="home-search-result-div">Found <b ng-bind="watchesSearchResult"></b> products in Watches. <i class="icon ion-chevron-right home-search-result-icon"></i></div> 
+        </a>
+
+        <a ng-show="sportsNutritionSearchResult" rel="nofollow" ui-sref="sportsNutrition({ title:newHomeSeachText})" class="home-search-result-a">
+            <div>Found <b ng-bind="sportsNutritionSearchResult"></b> products in Sports Nutrition. <i class="icon ion-chevron-right home-search-result-icon"></i></div> 
+        </a>
+
+        <a ng-show="petSuppliesSearchResult" rel="nofollow" ui-sref="petSupplies({ title:newHomeSeachText})" class="home-search-result-a">
+            <div class="home-search-result-div">Found <b ng-bind="petSuppliesSearchResult"></b> products in Pet Supplies. <i class="icon ion-chevron-right home-search-result-icon"></i></div> 
+        </a>
+                       
+    </div>
+    <!-- Electronics -->
+    <div class="row home-category-row">
+        <h2 class="home-category-h2"><a ui-sref="electronics" class="home-category-h2-link">Electronics</a></h2>
+    </div>
+    <div class="row">
+       <div class="col-50">
+            <a ui-sref="electronicsCategory({ category:'cell-phones'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Cell Phones
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/electronics/cell-phones.jpg" alt="Cell Phones" />
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="electronicsCategory({ category:'cell-phones-accessories'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Cell Phones Accessories
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/electronics/cell-phones-accesories.jpg" alt="Cell Phones Accessories" />
+                </div>
+            </div>
+            </a>       
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-50">
+            <a ui-sref="electronicsCategory({ category:'tv-video'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    TV &amp Video
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/electronics/tv-video.jpg" alt="TV Video" />
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="electronicsCategory({ category:'photo-camera'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Photo &amp Camera
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/electronics/photo-camera.jpg" alt="Photo Camera" />
+                </div>
+            </div>
+            </a>       
+       </div> 
+    </div>
+    <div class="row">
+        <div class="col-50">
+            <a ui-sref="electronicsCategory({ category:'home-audio'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Home Audio
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/electronics/home-audio.jpg" alt="Home Audio" />
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="electronicsCategory({ category:'gps'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    GPS
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/electronics/gps.jpg" alt="GPS" />
+                </div>
+            </div>
+            </a>       
+       </div> 
+    </div>
+    <!--End Electronics -->
+    <!-- Computers Laptops -->
+    <div class="row home-category-row">
+        <h2 class="home-category-h2"><a ui-sref="computersLaptops" class="home-category-h2-link">Computers &amp Laptops</a></h2>
+    </div>
+    <div class="row">
+       <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'deskops'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Desktops
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/desktops.jpg" alt="Desktops" />
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'laptops'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Laptops
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/laptops.jpg" alt="Laptops" />
+                </div>
+            </div>
+            </a>       
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'tablets'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Tablets
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/tablets.jpg" alt="Tablets" />
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'monitors'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Monitors
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/monitors.jpg" alt="Monitors" />
+                </div>
+            </div>
+            </a>       
+       </div> 
+    </div>
+    <div class="row">
+        <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'printers'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Printers
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/printers.jpg" alt="Printers" />
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'scanners'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Scanners
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/scanners.jpg" alt="Scanners" />
+                </div>
+            </div>
+            </a>       
+       </div> 
+    </div>
+    <div class="row">
+        <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'routers'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Routers
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/routers.jpg" alt="Routers"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'webcams'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Webcams
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/webcams.jpg" alt="Webcams"/>
+                </div>
+            </div>
+            </a>       
+       </div> 
+    </div>
+    <div class="row">
+        <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'external-hard-drives'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    External Hard Drives
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/external-hard-drives.jpg" alt="External Hard Drives"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="computersLaptopsCategory({ category:'usb-flash-drives'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    USB Flash Drives
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/computers/usb.jpg" alt="USB Flash Drives"/>
+                </div>
+            </div>
+            </a>       
+       </div> 
+    </div>
+    <!--End Computers Laptops -->
+    <!-- Watches -->
+    <div class="row home-category-row">
+        <h2 class="home-category-h2"><a ui-sref="watches" class="home-category-h2-link">Watches</a></h2>
+    </div>
+    <div class="row">
+       <div class="col-50">
+            <a ui-sref="watchesCategory({ category:'mens-watches'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Men's Watches
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/watches/men-watches.jpg" alt="Men's Watches"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="watchesCategory({ category:'womens-watches'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Women's Watches
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/watches/women-watches.jpg" alt="Women's Watches"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+    </div>
+    <!--End Watches -->
+    <!-- Sports Nutrition -->
+    <div class="row home-category-row">
+        <h2 class="home-category-h2"><a ui-sref="sportsNutrition" class="home-category-h2-link">Sports Nutrition</a></h2>
+    </div>
+    <div class="row">
+       <div class="col-50">
+            <a ui-sref="sportsNutritionCategory({ category:'amino-acids'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Amino Acids
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/sport/amino-acids.jpg" alt="Amino Acids"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="sportsNutritionCategory({ category:'endurance-energy'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Endurance &amp Energy
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/sport/endurance.jpg" alt="Endurance Energy"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+    </div>
+    <div class="row">
+       <div class="col-50">
+            <a ui-sref="sportsNutritionCategory({ category:'protein'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Proteins
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/sport/proteins.jpg" alt="Proteins"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="sportsNutritionCategory({ category:'pre-workout'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Pre-Workout
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/sport/pre-workout.jpg" alt="Pre-Workout"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+    </div>
+    <div class="row">
+       <div class="col-50">
+            <a ui-sref="sportsNutritionCategory({ category:'nutrition-bars'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Nutrition Bars
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/sport/bars.jpg" alt="Nutrition Bars"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="sportsNutritionCategory({ category:'weight-gainers'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Weight Gainers
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/sport/weight-gainers.jpg" alt="Weight Gainers"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+    </div>
+    <div class="row">
+       <div class="col-50">
+            <a ui-sref="sportsNutritionCategory({ category:'post-workout-recovery'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Post-Workout &amp Recovery
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/sport/post-workout.jpg" alt="Post-Workout Recovery"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="sportsNutritionCategory({ category:'fat-burners-thermogenics'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Fat Burners &amp Thermogenics
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/sport/fat-burner.jpg" alt="Fat Burners"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+    </div>
+    <!--End Sports Nutrition -->
+    <!-- Pet Supplies -->
+    <div class="row home-category-row">
+        <h2 class="home-category-h2"><a ui-sref="petSupplies" class="home-category-h2-link">Pet Supplies</a></h2>
+    </div>
+    <div class="row">
+       <div class="col-50">
+            <a ui-sref="petSuppliesCategory({ category:'birds'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Birds
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/pet/birds.jpg" alt="Birds"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="petSuppliesCategory({ category:'cats'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Cats
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/pet/cats.jpg" alt="Cats"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+    </div>
+    <div class="row">
+       <div class="col-50">
+            <a ui-sref="petSuppliesCategory({ category:'dogs'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Dogs
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/pet/dogs.jpg" alt="Dogs"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+       <div class="col-50">
+            <a ui-sref="petSuppliesCategory({ category:'fish-aquatic-pets'})" class="home-subcategory-link">
+                <div class="card">
+                <div class="item item-divider home-subcategory-title">
+                    Fish &amp Aquatic Pets
+                </div>
+                <div class="item item-text-wrap home-subcategory-img-div">
+                    <img class="home-subcategory-img" src="img/pet/fishes.jpg" alt="Fish"/>
+                </div>
+            </div>
+            </a>       
+       </div>
+    </div>
+    <!--End Pet Supplies -->
+  </ion-content>
+</ion-view>

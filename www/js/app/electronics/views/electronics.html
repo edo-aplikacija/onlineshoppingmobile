@@ -1,0 +1,108 @@
+﻿<ion-view>
+  <ion-content delegate-handle="search-top">
+    <div class="row advanced-search-category-row">
+        <h2 class="advanced-search-category-h2">Browse electronic categories</h2>
+    </div>
+    <ion-scroll zooming="false" direction="x" scrollbar-x="false">
+    <div class="advanced-search-subcategory-main-div">
+         <div class="home-subcategory-main-div">
+              <a ui-sref="electronicsCategory({ category:'cell-phones'})" class="home-subcategory-link">
+                  <div class="card">
+                  <div class="item item-divider home-subcategory-title">
+                      Cell Phones
+                  </div>
+                  <div class="item item-text-wrap home-subcategory-img-div">
+                      <img class="home-subcategory-img" src="img/electronics/cell-phones.jpg" alt="Cell Phones" />
+                  </div>
+              </div>
+              </a>       
+         </div>
+         <div class="home-subcategory-main-div">
+              <a ui-sref="electronicsCategory({ category:'cell-phones-accessories'})" class="home-subcategory-link">
+                  <div class="card">
+                  <div class="item item-divider home-subcategory-title">
+                      Cell Phones Accessories
+                  </div>
+                  <div class="item item-text-wrap home-subcategory-img-div">
+                      <img class="home-subcategory-img" src="img/electronics/cell-phones-accesories.jpg" alt="Cell Phones Accessories" />
+                  </div>
+              </div>
+              </a>       
+         </div>
+          <div class="home-subcategory-main-div">
+              <a ui-sref="electronicsCategory({ category:'tv-video'})" class="home-subcategory-link">
+                  <div class="card">
+                  <div class="item item-divider home-subcategory-title">
+                      TV &amp Video
+                  </div>
+                  <div class="item item-text-wrap home-subcategory-img-div">
+                      <img class="home-subcategory-img" src="img/electronics/tv-video.jpg" alt="TV Video" />
+                  </div>
+              </div>
+              </a>       
+         </div>
+         <div class="home-subcategory-main-div">
+              <a ui-sref="electronicsCategory({ category:'photo-camera'})" class="home-subcategory-link">
+                  <div class="card">
+                  <div class="item item-divider home-subcategory-title">
+                      Photo &amp Camera
+                  </div>
+                  <div class="item item-text-wrap home-subcategory-img-div">
+                      <img class="home-subcategory-img" src="img/electronics/photo-camera.jpg" alt="Photo Camera" />
+                  </div>
+              </div>
+              </a>       
+         </div> 
+          <div class="home-subcategory-main-div">
+              <a ui-sref="electronicsCategory({ category:'home-audio'})" class="home-subcategory-link">
+                  <div class="card">
+                  <div class="item item-divider home-subcategory-title">
+                      Home Audio
+                  </div>
+                  <div class="item item-text-wrap home-subcategory-img-div">
+                      <img class="home-subcategory-img" src="img/electronics/home-audio.jpg" alt="Home Audio" />
+                  </div>
+              </div>
+              </a>       
+         </div>
+         <div class="home-subcategory-main-div">
+              <a ui-sref="electronicsCategory({ category:'gps'})" class="home-subcategory-link">
+                  <div class="card">
+                  <div class="item item-divider home-subcategory-title">
+                      GPS
+                  </div>
+                  <div class="item item-text-wrap home-subcategory-img-div">
+                      <img class="home-subcategory-img" src="img/electronics/gps.jpg" alt="GPS" />
+                  </div>
+              </div>
+              </a>       
+         </div> 
+          
+      </div>
+    </ion-scroll>
+    <div class="advanced-search-num-products" ng-show="totalProducts && totalProducts > 0" ng-bind="'Found ' + totalProducts + ' products'"></div>      
+    <div class="list">
+        <a ui-sref="electronicsProduct({id:product._id, slug:product.slug})" class="item item-thumbnail-left" ng-repeat="product in products">
+          <img class="advanced-search-img" ng-src="{{ product.images[0] }}">
+          <h2 class="advanced-search-title" ng-bind="product.title"></h2>
+          <div class="advanced-search-price"><b ng-bind="formatPrice(product.price)"></b></div>
+          <div>                          
+              <div class="advanced-search-old-price" ng-bind="formatOldPrice(product.price, product.oldprice)"></div>
+              <div ng-show="calculateDiscount(product.price, product.oldprice)" class="advanced-search-sale-tag" ng-bind="calculateDiscount(product.price, product.oldprice)"></div>
+          </div>
+          <div class="advanced-search-amazon-div"><img class="img-responsive advanced-search-amazon-img" src="img/amazon-small-logo.jpg" alt="{{ 'amazon' + $index }}" /></div>
+        </a>
+    </div>
+    <div ng-show="noResult">
+        <div class="advanced-search-no-result">No results. Try again.</div>
+    </div>
+    <div ng-show="loading">
+      <div class="text-center advanced-search-loading-div">
+          <img src="img/ajax-loader.gif" alt="loading" />
+      </div>
+    </div>
+    <div ng-click="loadNewPage()" ng-show="!loading && !noResult && currentPage <= totalProducts / 24" class="advanced-search-next-page">
+        <i class="icon ion-chevron-down advanced-search-next-page-icon"></i>
+    </div>
+  </ion-content>
+</ion-view>

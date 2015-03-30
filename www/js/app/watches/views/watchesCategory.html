@@ -1,0 +1,31 @@
+﻿<ion-view>
+  <ion-content delegate-handle="search-top">
+    <div class="row advanced-search-category-row">
+        <h2 class="advanced-search-category-h2" ng-bind="categoryTitle"></h2>
+    </div>
+    <div class="advanced-search-num-products" ng-show="totalProducts && totalProducts > 0" ng-bind="'Found ' + totalProducts + ' products'"></div>       
+    <div class="list">
+        <a ui-sref="watchesProduct({id:product._id, slug:product.slug})" class="item item-thumbnail-left" ng-repeat="product in products">
+          <img class="advanced-search-img" ng-src="{{ product.images[0] }}">
+          <h2 class="advanced-search-title" ng-bind="product.title"></h2>
+          <div class="advanced-search-price"><b ng-bind="formatPrice(product.price)"></b></div>
+          <div>                          
+              <div class="advanced-search-old-price" ng-bind="formatOldPrice(product.price, product.oldprice)"></div>
+              <div ng-show="calculateDiscount(product.price, product.oldprice)" class="advanced-search-sale-tag" ng-bind="calculateDiscount(product.price, product.oldprice)"></div>
+          </div>
+          <div class="advanced-search-amazon-div"><img class="img-responsive advanced-search-amazon-img" src="img/amazon-small-logo.jpg" alt="{{ 'amazon' + $index }}" /></div>
+        </a>
+    </div>
+    <div ng-show="noResult">
+        <div class="advanced-search-no-result">No results. Try again.</div>
+    </div>
+    <div ng-show="loading">
+      <div class="text-center advanced-search-loading-div">
+          <img src="img/ajax-loader.gif" alt="loading" />
+      </div>
+    </div>
+    <div ng-click="loadNewPage()" ng-show="!loading && !noResult && currentPage <= totalProducts / 24" class="advanced-search-next-page">
+        <i class="icon ion-chevron-down advanced-search-next-page-icon"></i>
+    </div>
+  </ion-content>
+</ion-view>
